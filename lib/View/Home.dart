@@ -110,7 +110,7 @@ class _HomeState extends State<Home> {
               width: width,
               color: Colors.black.withOpacity(.2),
               padding:
-                  const EdgeInsets.only(left: 8.0, bottom: 8.0),
+                  const EdgeInsets.only(left: 8.0, bottom: 12.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[

@@ -45,7 +45,7 @@ class VideoTileState extends State<VideoTile> {
                 alignment: Alignment.bottomCenter,
                 children: <Widget>[
                   VideoPlayer(_controller),
-                  _PlayPauseOverlay(controller: _controller),
+//                  _PlayPauseOverlay(controller: _controller),
                 ],
               ),
             ),
