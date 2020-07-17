@@ -8,13 +8,12 @@ import 'dart:convert';
 final String VIDEO_URL =
     'https://www.pinkvilla.com/feed/video-test/video-feed.json';
 
-Future<List<PVMetaData>> fetchVideoFeed({BuildContext context}) async {
-  showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (_) => LoadingScreen());
+final String VIDEO_URL2 =
+    'https://www.pinkvilla.com/feed/video-test/video-feed-1.json';
+
+Future<List<PVMetaData>> fetchVideoFeed(BuildContext context, String url) async {
   try {
-    var response = await http.get(VIDEO_URL);
+    var response = await http.get(url);
     var result = json.decode(response.body);
 
     List<PVMetaData> data = [];
@@ -33,10 +32,8 @@ Future<List<PVMetaData>> fetchVideoFeed({BuildContext context}) async {
         ));
       });
     }
-    Navigator.pop(context); //pop dialog
     return data;
   } on Exception catch (_) {
-    Navigator.pop(context); //pop dialog
     return null;
   }
 }
